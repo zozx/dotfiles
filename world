@@ -22,7 +22,6 @@ app-shells/zsh
 app-text/tree
 dev-python/psutil
 dev-util/ccache
-dev-util/pkgdev
 dev-util/strace
 dev-vcs/git
 games-action/minecraft-launcher
@@ -39,6 +38,7 @@ media-gfx/flameshot
 media-gfx/gimp
 media-sound/alsa-utils
 media-sound/spotify
+media-sound/yesplaymusic-bin
 media-video/mpv
 media-video/obs-studio
 net-im/deepin-wine-wechat
