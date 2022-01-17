@@ -2,7 +2,7 @@ app-admin/doas
 app-admin/eclean-kernel
 app-editors/neovim
 app-editors/visual-studio-code-bin
-app-emulation/virt-manager
+app-emulation/qemu
 app-emulation/wine-staging
 app-eselect/eselect-repository
 app-i18n/fcitx5-meta
@@ -43,6 +43,7 @@ media-video/mpv
 media-video/obs-studio
 net-im/deepin-wine-wechat
 net-im/telegram-desktop
+net-irc/weechat
 net-misc/networkmanager
 net-proxy/v2raya-bin
 sys-apps/mlocate
@@ -51,13 +52,13 @@ sys-apps/smartmontools
 sys-block/zram-init
 sys-boot/efibootmgr
 sys-boot/syslinux
-sys-firmware/intel-microcode
+sys-devel/clang
+sys-firmware/edk2-ovmf
 sys-fs/btrfs-progs
 sys-fs/dosfstools
 sys-fs/genfstab
 sys-kernel/linux-firmware
 sys-kernel/xanmod-hybrid
-sys-power/acpi
 sys-power/cpupower
 sys-process/htop
 sys-process/lsof
