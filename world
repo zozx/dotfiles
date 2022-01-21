@@ -28,11 +28,13 @@ games-action/minecraft-launcher
 games-util/lutris
 games-util/steam-meta
 kde-apps/kde-apps-meta
+kde-apps/kdenlive
 kde-misc/latte-dock
 kde-plasma/plasma-meta
 mail-client/thunderbird-bin
 media-fonts/fontawesome
 media-fonts/nerd-fonts
+media-fonts/sarasa-gothic
 media-fonts/symbola
 media-gfx/flameshot
 media-gfx/gimp
@@ -58,7 +60,7 @@ sys-fs/btrfs-progs
 sys-fs/dosfstools
 sys-fs/genfstab
 sys-kernel/linux-firmware
-sys-kernel/xanmod-hybrid
+sys-kernel/liquorix-sources
 sys-power/cpupower
 sys-process/htop
 sys-process/lsof
