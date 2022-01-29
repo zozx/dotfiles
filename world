@@ -3,7 +3,6 @@ app-admin/eclean-kernel
 app-backup/snapper
 app-crypt/efitools
 app-crypt/sbsigntools
-app-dicts/fcitx5-pinyin-zhwiki
 app-editors/neovim
 app-editors/visual-studio-code-bin
 app-emulation/qemu
