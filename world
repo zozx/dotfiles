@@ -1,5 +1,6 @@
 app-admin/doas
 app-admin/eclean-kernel
+app-backup/snapper
 app-crypt/efitools
 app-crypt/sbsigntools
 app-dicts/fcitx5-pinyin-zhwiki
@@ -48,10 +49,11 @@ media-sound/yesplaymusic-bin
 media-video/mpv
 media-video/obs-studio
 net-im/deepin-wine-wechat
+net-im/element-desktop-bin
 net-im/telegram-desktop
 net-irc/weechat
-net-misc/networkmanager
 net-proxy/v2raya-bin
+net-wireless/wpa_supplicant
 sys-apps/hwinfo
 sys-apps/mlocate
 sys-apps/pciutils

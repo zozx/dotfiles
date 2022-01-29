@@ -1,0 +1,23 @@
+call plug#begin('~/.vim/plugged')
+    Plug 'morhetz/gruvbox'
+    Plug 'Yggdroot/indentLine'
+    Plug 'jiangmiao/auto-pairs'
+call plug#end()
+color gruvbox
+let g:indent_guides_guide_size  = 1
+let g:indent_guides_start_level = 2
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
+set number
+set ruler
+set showmode
+set showcmd
+set mouse=a
+set encoding=utf-8
+set t_Co=256
+set autoindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set cursorline
+set showmatch
+set ignorecase
