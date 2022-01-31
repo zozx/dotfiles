@@ -1,1 +1,1 @@
-mitigations=off iwlwifi.power_save=0 iwlwifi.enable_ini=0 i915.fastboot=1 snd_hda_intel.probe_mask=1 zram.num_devices=1 root=PARTUUID=a8ea56a5-1fec-e447-966f-5b006288f65f ro add_efi_memmap rootflags=subvol=vol_root net.ifnames=0 loglevel=3
+mitigations=off iwlwifi.power_save=0 iwlwifi.enable_ini=0 i915.fastboot=1 snd_hda_intel.probe_mask=1 zram.num_devices=1 root=PARTUUID=a8ea56a5-1fec-e447-966f-5b006288f65f rw add_efi_memmap rootflags=subvol=vol_root net.ifnames=0 loglevel=3
