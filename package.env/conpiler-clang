@@ -1,0 +1,11 @@
+sys-devel/llvm compiler-clang
+sys-libs/libcxx compiler-clang
+sys-libs/libcxxabi compiler-clang
+sys-libs/compiler-rt compiler-clang
+sys-libs/compiler-rt-sanitizers compiler-clang
+sys-devel/lld compiler-clang
+sys-devel/clang compiler-clang
+app-doc/doxygen compiler-clang
+dev-lang/spidermonkey compiler-clang
+media-libs/mesa compiler-clang
+dev-libs/libusb compiler-clang
