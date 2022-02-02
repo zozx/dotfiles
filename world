@@ -52,9 +52,12 @@ net-irc/weechat
 net-misc/aria2
 net-proxy/v2raya-bin
 net-wireless/wpa_supplicant
+sys-apps/bat
+sys-apps/exa
 sys-apps/hwinfo
 sys-apps/mlocate
 sys-apps/pciutils
+sys-apps/ripgrep
 sys-apps/smartmontools
 sys-block/zram-init
 sys-boot/efibootmgr
