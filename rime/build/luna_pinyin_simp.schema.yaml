@@ -1,10 +1,10 @@
 __build_info:
   rime_version: 1.7.3
   timestamps:
-    default: 1643109615
+    default: 1643745598
     default.custom: 1643158788
     luna_pinyin_simp.custom: 1643157379
-    luna_pinyin_simp.schema: 1643109615
+    luna_pinyin_simp.schema: 1643745598
 custom_phrase:
   db_class: stabledb
   dictionary: ""
