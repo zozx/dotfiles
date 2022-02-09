@@ -9,3 +9,5 @@ app-doc/doxygen compiler-clang
 dev-lang/spidermonkey compiler-clang
 media-libs/mesa compiler-clang
 dev-libs/libusb compiler-clang
+net-libs/nodejs compiler-clang
+www-client/chromium compiler-clang
