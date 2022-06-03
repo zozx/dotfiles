@@ -1,1 +1,2 @@
-app-i18n/fcitx5-meta rime
+# move app-i18n/fcitx5-meta app-i18n/fcitx-meta
+app-i18n/fcitx-meta rime

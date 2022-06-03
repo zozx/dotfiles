@@ -1,14 +1,15 @@
 app-admin/doas
+app-admin/eclean-kernel
 app-admin/keepassxc
 app-backup/snapper
 app-crypt/efitools
 app-crypt/sbsigntools
 app-editors/neovim
-app-editors/visual-studio-code-bin
+app-editors/vscode
 app-emulation/qemu
 app-emulation/wine-staging
 app-eselect/eselect-repository
-app-i18n/fcitx5-meta
+app-i18n/fcitx-meta
 app-misc/cmatrix
 app-misc/neofetch
 app-misc/tmate
@@ -29,6 +30,8 @@ dev-embedded/openocd
 dev-go/get-ego-vendor
 dev-python/psutil
 dev-util/ccache
+dev-util/pkgcheck
+dev-util/pkgdev
 dev-util/strace
 dev-vcs/git
 games-action/minecraft-launcher
@@ -50,7 +53,6 @@ media-sound/yesplaymusic-bin
 media-video/mpv
 media-video/obs-studio
 net-im/deepin-wine-wechat
-net-im/element-desktop-bin
 net-im/telegram-desktop
 net-irc/weechat
 net-misc/aria2

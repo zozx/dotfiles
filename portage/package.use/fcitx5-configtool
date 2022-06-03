@@ -1,1 +1,2 @@
-app-i18n/fcitx5-configtool -config-qt
+# move app-i18n/fcitx5-configtool app-i18n/fcitx-configtool
+app-i18n/fcitx-configtool -config-qt
