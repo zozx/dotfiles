@@ -11,3 +11,4 @@ media-libs/mesa compiler-clang
 dev-libs/libusb compiler-clang
 net-libs/nodejs compiler-clang
 www-client/chromium compiler-clang
+x11-drivers/nvidia-drivers compiler-clang

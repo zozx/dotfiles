@@ -1,2 +1,5 @@
 www-client/chromium portage_tmpdir_var_tmp
 media-fonts/sarasa-gothic portage_tmpdir_var_tmp
+sys-devel/gcc portage_tmpdir_var_tmp
+app-emulation/wine-staging portage_tmpdir_var_tmp
+net-libs/webkit-gtk portage_tmpdir_var_tmp

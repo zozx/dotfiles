@@ -1,1 +1,1 @@
-www-client/chromium libcxx widevine
+www-client/chromium libcxx widevine gtk4 -suid
