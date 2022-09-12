@@ -1,0 +1,77 @@
+tproxy-port: 7893
+dns:
+  enable: true
+  listen: 127.0.0.1:6868
+  ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver:
+    - 223.6.6.6
+    - 1.1.1.1
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - '!CN'
+iptables:
+  enable: true
+  inbound-interface: wlan0
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: 127.0.0.1:9090
+external-ui: ./clash-dashboard
+interface-name: wlan0
+rules:
+
+  # network(tcp/udp) condition for all rules
+  - DOMAIN-SUFFIX,bilibili.com,DIRECT,tcp
+  - DOMAIN-SUFFIX,bilibili.com,REJECT,udp
+    
+  # multiport condition for rules SRC-PORT and DST-PORT
+  - DST-PORT,123/136/137-139,DIRECT,udp
+  
+  # rule GEOSITE
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,icloud@cn,DIRECT
+  - GEOSITE,apple@cn,DIRECT
+  - GEOSITE,apple-cn,DIRECT
+  - GEOSITE,microsoft@cn,DIRECT
+  - GEOSITE,facebook,PROXY
+  - GEOSITE,youtube,PROXY
+  - GEOSITE,geolocation-cn,DIRECT
+  - GEOSITE,geolocation-!cn,PROXY
+    
+  # source IPCIDR condition for all rules in gateway proxy
+  - GEOSITE,geolocation-!cn,REJECT,192.168.1.88/32,192.168.1.99/32
+
+  - GEOIP,telegram,PROXY,no-resolve
+  - GEOIP,private,DIRECT,no-resolve
+  - GEOIP,cn,DIRECT
+  
+  - MATCH,PROXY
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    use:
+      - GOPRO
+    filterout: 'IPLC'
+
+proxy-providers:
+  GOPRO:
+    type: http
+    url: "https://sub.rnmtq.host/api/v1/client/subscribe?token=a5af25e355569f5082ef3f14218a372d"
+    path: ./GoPro.yaml
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
