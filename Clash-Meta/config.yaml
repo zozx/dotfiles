@@ -1,31 +1,24 @@
 tproxy-port: 7893
 dns:
   enable: true
-  listen: 127.0.0.1:6868
-  ipv6: true
+  listen: 0.0.0.0:6868
   default-nameserver:
     - 223.5.5.5
+    - 8.8.8.8
   enhanced-mode: redir-host
-  fake-ip-range: 198.18.0.1/16
-  use-hosts: true
   nameserver:
+    - 223.5.5.5
     - 223.6.6.6
-    - 1.1.1.1
   fallback:
     - 8.8.8.8
     - 8.8.4.4
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    geosite:
-      - '!CN'
 iptables:
   enable: true
   inbound-interface: wlan0
-allow-lan: true
+allow-lan: false
 mode: rule
 log-level: info
-ipv6: true
+ipv6: false
 external-controller: 127.0.0.1:9090
 external-ui: ./clash-dashboard
 interface-name: wlan0
@@ -61,15 +54,68 @@ rules:
 proxy-groups:
   - name: PROXY
     type: select
+    proxies:
+      - "KR | Azure"
+      - "US | DigitalVirt"
+      - "JP | Azure"
     use:
       - GOPRO
+      - VN
     filterout: 'IPLC'
+
+proxies:
+  - name: "KR | Azure"
+    type: trojan
+    server: "172.67.111.242"
+    port: 443
+    password: "c8514130-9d3a-4f7a-97cf-ad92e71015a8"
+    network: ws
+    sni: "kr.rycbar.top"
+    ws-opts:
+      path: "/fb406189-642c-4587-935c-01b4eec392e7"
+      headers:
+        Host: "kr.rycbar.top"
+  
+  - name: "US | DigitalVirt"
+    type: trojan
+    server: "172.67.111.242"
+    port: 443
+    password: "9f50f15c-7ce5-4ff9-80b7-81f2e503c873"
+    network: ws
+    sni: "la.rycbar.top"
+    ws-opts:
+      path: "/cf9dab09-f858-45cc-a5c7-542c83fe532d"
+      headers:
+        Host: "la.rycbar.top"
+  
+  - name: "JP | Azure"
+    type: vless
+    server: "172.67.111.242"
+    port: 443
+    uuid: "cc612472-6d21-48d6-fae2-fcc66b52392e"
+    tls: true
+    cipher: none
+    network: ws
+    ws-opts:
+      path: "/cc612472-6d21-48d6-fae2-fcc66b52392e"
+      headers:
+        Host: "jp.rycbar.top"
 
 proxy-providers:
   GOPRO:
     type: http
-    url: "https://sub.rnmtq.host/api/v1/client/subscribe?token=a5af25e355569f5082ef3f14218a372d"
+    url: "https://sub.rnmtq.host/api/v1/client/subscribe?token=f790c640cd03bb425bcfd595972b8d59"
     path: ./GoPro.yaml
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  
+  VN:
+    type: http
+    url: "https://vvnn.ml/api/v1/client/subscribe?token=db25c7e26b02d80e69488c9ed2bca758"
+    path: ./VN.yaml
     interval: 3600
     health-check:
       enable: true

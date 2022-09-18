@@ -5,20 +5,21 @@ mode: rule
 log-level: info
 external-controller: '127.0.0.1:9090'
 proxies:
-    - { name: 'US | GIA', type: trojan, server: lg-us-01.gogogo.pro, port: 8901, password: 951cad61-18bf-44d0-8253-42a5c13b58ff, udp: true, sni: rnmtq.host }
-    - { name: 'HK | CUPremium', type: trojan, server: 103.152.34.57, port: 8901, password: 951cad61-18bf-44d0-8253-42a5c13b58ff, udp: true, sni: rnmtq.host }
-    - { name: 'HK | CMI', type: trojan, server: 156.251.180.101, port: 8901, password: 951cad61-18bf-44d0-8253-42a5c13b58ff, udp: true, sni: rnmtq.host }
+    - { name: 'US | GIA', type: trojan, server: 154.17.14.71, port: 8901, password: 1c1dd7f1-039f-4e64-955b-de52f7f4a959, udp: true, sni: rnmtq.host }
+    - { name: 'HK | CUPremium', type: trojan, server: 103.152.34.57, port: 8901, password: 1c1dd7f1-039f-4e64-955b-de52f7f4a959, udp: true, sni: rnmtq.host }
+    - { name: 'HK | CMI', type: trojan, server: 156.251.180.101, port: 8901, password: 1c1dd7f1-039f-4e64-955b-de52f7f4a959, udp: true, sni: rnmtq.host }
+    - { name: 'JP | SoftBank', type: trojan, server: 154.19.187.34, port: 8901, password: 1c1dd7f1-039f-4e64-955b-de52f7f4a959, udp: true, sni: rnmtq.host }
 proxy-groups:
-    - { name: '🚀 节点选择', type: select, proxies: ['🚄 高速公网', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: '🚄 高速公网', type: url-test, proxies: ['US | GIA', 'HK | CUPremium', 'HK | CMI'], url: 'http://www.gstatic.com/generate_204', interval: 30 }
-    - { name: '📺 巴哈姆特', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: '🌍 国外媒体', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: '📲 电报信息', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: 'Ⓜ️ 微软服务', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: '🍎 苹果服务', type: select, proxies: [DIRECT, '🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: '📢 谷歌FCM', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: '🎯 全球直连', type: select, proxies: [DIRECT, 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
-    - { name: '🐟 漏网之鱼', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI'] }
+    - { name: '🚀 节点选择', type: select, proxies: ['🚄 高速公网', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: '🚄 高速公网', type: url-test, proxies: ['US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'], url: 'http://www.gstatic.com/generate_204', interval: 30 }
+    - { name: '📺 巴哈姆特', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: '🌍 国外媒体', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: '📲 电报信息', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: 'Ⓜ️ 微软服务', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: '🍎 苹果服务', type: select, proxies: [DIRECT, '🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: '📢 谷歌FCM', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: '🎯 全球直连', type: select, proxies: [DIRECT, 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
+    - { name: '🐟 漏网之鱼', type: select, proxies: ['🚀 节点选择', 'US | GIA', 'HK | CUPremium', 'HK | CMI', 'JP | SoftBank'] }
 rules:
     - 'DOMAIN,sub.rnmtq.host,DIRECT'
     - 'DOMAIN,gamer2-cds.cdn.hinet.net,📺 巴哈姆特'
