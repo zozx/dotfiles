@@ -66,7 +66,7 @@ proxy-groups:
 proxies:
   - name: "KR | Azure"
     type: trojan
-    server: "172.67.111.242"
+    server: "172.67.183.119"
     port: 443
     password: "c8514130-9d3a-4f7a-97cf-ad92e71015a8"
     network: ws
@@ -78,7 +78,7 @@ proxies:
   
   - name: "US | DigitalVirt"
     type: trojan
-    server: "172.67.111.242"
+    server: "172.67.183.119"
     port: 443
     password: "9f50f15c-7ce5-4ff9-80b7-81f2e503c873"
     network: ws
@@ -90,7 +90,7 @@ proxies:
   
   - name: "JP | Azure"
     type: vless
-    server: "172.67.111.242"
+    server: "172.67.183.119"
     port: 443
     uuid: "cc612472-6d21-48d6-fae2-fcc66b52392e"
     tls: true
