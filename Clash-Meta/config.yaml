@@ -23,15 +23,6 @@ external-controller: 127.0.0.1:9090
 external-ui: ./clash-dashboard
 interface-name: wlan0
 rules:
-
-  # network(tcp/udp) condition for all rules
-  - DOMAIN-SUFFIX,bilibili.com,DIRECT,tcp
-  - DOMAIN-SUFFIX,bilibili.com,REJECT,udp
-    
-  # multiport condition for rules SRC-PORT and DST-PORT
-  - DST-PORT,123/136/137-139,DIRECT,udp
-  
-  # rule GEOSITE
   - GEOSITE,category-ads-all,REJECT
   - GEOSITE,icloud@cn,DIRECT
   - GEOSITE,apple@cn,DIRECT
@@ -41,14 +32,9 @@ rules:
   - GEOSITE,youtube,PROXY
   - GEOSITE,geolocation-cn,DIRECT
   - GEOSITE,geolocation-!cn,PROXY
-    
-  # source IPCIDR condition for all rules in gateway proxy
-  - GEOSITE,geolocation-!cn,REJECT,192.168.1.88/32,192.168.1.99/32
-
   - GEOIP,telegram,PROXY,no-resolve
   - GEOIP,private,DIRECT,no-resolve
   - GEOIP,cn,DIRECT
-  
   - MATCH,PROXY
 
 proxy-groups:
@@ -58,39 +44,30 @@ proxy-groups:
       - "KR | Azure"
       - "US | DigitalVirt"
       - "JP | Azure"
-    use:
-      - GOPRO
-      - VN
-    filterout: 'IPLC'
+      - "FR | Azure"
 
 proxies:
   - name: "KR | Azure"
     type: trojan
-    server: "172.67.183.119"
+    server: "kr.rycbar.top"
     port: 443
     password: "c8514130-9d3a-4f7a-97cf-ad92e71015a8"
     network: ws
-    sni: "kr.rycbar.top"
     ws-opts:
       path: "/fb406189-642c-4587-935c-01b4eec392e7"
-      headers:
-        Host: "kr.rycbar.top"
   
   - name: "US | DigitalVirt"
     type: trojan
-    server: "172.67.183.119"
+    server: "la.rycbar.top"
     port: 443
     password: "9f50f15c-7ce5-4ff9-80b7-81f2e503c873"
     network: ws
-    sni: "la.rycbar.top"
     ws-opts:
       path: "/cf9dab09-f858-45cc-a5c7-542c83fe532d"
-      headers:
-        Host: "la.rycbar.top"
   
   - name: "JP | Azure"
     type: vless
-    server: "172.67.183.119"
+    server: "jp.rycbar.top"
     port: 443
     uuid: "cc612472-6d21-48d6-fae2-fcc66b52392e"
     tls: true
@@ -98,26 +75,15 @@ proxies:
     network: ws
     ws-opts:
       path: "/cc612472-6d21-48d6-fae2-fcc66b52392e"
-      headers:
-        Host: "jp.rycbar.top"
 
-proxy-providers:
-  GOPRO:
-    type: http
-    url: "https://sub.rnmtq.host/api/v1/client/subscribe?token=f790c640cd03bb425bcfd595972b8d59"
-    path: ./GoPro.yaml
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-  
-  VN:
-    type: http
-    url: "https://vvnn.ml/api/v1/client/subscribe?token=db25c7e26b02d80e69488c9ed2bca758"
-    path: ./VN.yaml
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
+  - name: "FR | Azure"
+    type: vmess
+    server: "fr.rycbar.top"
+    port: 443
+    uuid: "6d71b223-91ca-4d1e-a725-6aa4fc91c772"
+    alterId: 0
+    tls: true
+    cipher: none
+    network: ws
+    ws-opts:
+      path: "/6d71b223-91ca-4d1e-a725-6aa4fc91c772"

@@ -60,6 +60,7 @@ net-misc/aria2
 net-misc/sunloginclient
 net-misc/yt-dlp
 net-p2p/qbittorrent
+net-proxy/v2raya-bin
 net-wireless/wpa_supplicant
 sys-apps/bat
 sys-apps/exa
@@ -68,7 +69,7 @@ sys-apps/pciutils
 sys-apps/ripgrep
 sys-apps/smartmontools
 sys-apps/usbutils
-sys-block/zram-init
+sys-apps/zram-generator
 sys-boot/efibootmgr
 sys-firmware/edk2-ovmf
 sys-fs/btrfs-progs
