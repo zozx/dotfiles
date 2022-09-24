@@ -1,0 +1,10 @@
+[Unit]
+Description=Clash-Meta Daemon, Another Clash Kernel.
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/Clash-Meta -d /etc/Clash-Meta
+
+[Install]
+WantedBy=multi-user.target
