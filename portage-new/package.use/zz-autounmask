@@ -1,0 +1,17 @@
+# required by app-portage/pfl-3.2-r2::gentoo[network-cron]
+# required by pfl (argument)
+>=sys-apps/util-linux-2.38.1 caps
+# required by kde-apps/kdenlive-22.12.0::gentoo
+# required by kde-apps/kdemultimedia-meta-22.12.0::gentoo
+# required by kde-apps/kde-apps-meta-22.12.0::gentoo[multimedia]
+# required by kde-apps-meta (argument)
+>=media-video/ffmpeg-4.4.3 libass
+# required by media-sound/pulseaudio-daemon-16.1-r6::gentoo[alsa-plugin,alsa]
+# required by media-libs/libpulse-16.1-r2::gentoo
+# required by kde-plasma/plasma-pa-5.26.4::gentoo
+# required by kde-plasma/plasma-meta-5.26.4::gentoo[pulseaudio]
+# required by plasma-meta (argument)
+>=media-plugins/alsa-plugins-1.2.7.1-r1 pulseaudio
+# required by app-shells/zsh-theme-powerlevel10k-1.16.1::gentoo-zh
+# required by zsh-theme-powerlevel10k (argument)
+>=app-shells/gitstatus-1.5.4 zsh-completion
